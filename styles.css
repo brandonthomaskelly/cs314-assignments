@@ -63,18 +63,32 @@ h2 {
     margin-left: -1%;
     width: 102%;
     height: 350px;
-    background-color: darkblue;
+    background: linear-gradient(red, yellow);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-button {
-    background-color: darkblue;
-    color: white;
+#button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: pink;
+    color: black;
     height: 35px;
     width: 75px;
     border-radius:10px;
+}
+
+#button:hover {
+    transition: all 0.7s ease 0s;
+    background-color: red;
+    color: black;
+}
+
+#button:focus {
+    background-color:black;
+    color: white;
 }
 
 footer {
@@ -96,3 +110,73 @@ p3 {
     height:90px;
     width:100%;
 }
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.col {
+    flex: 0 0 calc(33.33% - 30px);
+    margin: 5px;
+}
+
+img {
+    width: 100%;
+}
+
+@keyframes slide {
+    from {
+      margin-left: 100%;
+      
+    }
+  
+    to {
+      margin-left: 45%;
+      
+    }
+  }
+
+.pacman {
+    width: 0px;
+    height: 0px;
+    border-right: 60px solid transparent;
+    border-top: 60px solid yellow;
+    border-left: 60px solid yellow;
+    border-bottom: 60px solid yellow;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-transition: background-color 2s ease-out;
+    -moz-transition: background-color 2s ease-out;
+    -o-transition: background-color 2s ease-out;
+    transition: background-color 2s ease-out;
+    animation-name: slide;
+    animation-duration: 3s;
+  }
+
+  .pacman:hover {
+    width: 100px;
+	height: 100px;
+	background: green;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+    background-color: green;
+    cursor: pointer;
+}
+
+.gallery2 {
+    display: -webkit-flex;
+    height: 100%;
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
