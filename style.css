@@ -1,0 +1,92 @@
+* {
+    font-family: 'Roboto Condensed', serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+}
+
+section {
+    text-align: center;
+    padding: 1em 2em;
+}
+
+p {
+    color: grey;
+}
+
+.btn {
+    border: solid 1px white;
+    background-color: lightsteelblue;
+    padding: 0.5em;
+    left: 50%;
+    top: 50%;
+    border-radius: 10px;
+    transform-origin: top;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%); 
+    -moz-transform: translate(-50%, -50%);  
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ease;
+    
+    cursor: pointer;
+    color: red;
+    text-decoration: none;
+  }
+  
+  .btn:hover {
+    color: cyan;
+    opacity: 0.5;
+  }
+  
+  .btn:active {
+    color: hotpink;
+    opacity: 1;
+  }
+
+.darkBackground {
+    background: #19334d;
+}
+  
+.wrapper {
+	padding: 5px;
+	max-width: 960px;
+	width: 95%;
+	margin: 20px auto;
+}
+
+
+.columns {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	margin: 0px 0;
+}
+
+.column {
+	flex: 1;
+	margin: 2px;
+	padding: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .darkBackground .btn {
+          height: auto;
+      }
+  }
+
+@media screen and (max-width: 768px) {
+  .columns .column {
+		margin-bottom: 5px;
+        flex-basis: 40%;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.columns .column {
+		flex-basis: 100%;
+		margin: 0 0 5px 0;
+	}
+}
