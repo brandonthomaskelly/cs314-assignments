@@ -1,11 +1,70 @@
+<!-- Author: Brandon Kelly -->
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title></title>
-  </head>
-  <body>
-    <!-- Body content goes here -->
-  </body>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>SURVEY</title>
+      <link rel="reset" type="text/css" href="reset.css">      
+      <link rel="stylesheet" href="style.css">
+      <div id="header">
+      <h1 id="title">HI THERE!</h1>
+      <p id="description">Tell me a little about yourself.</p>
+      </div>
+</head>
+
+<body>                
+  <section id="container">
+    <form action="" id="survey-form">
+      <div class="row">
+        <label for="first-name" id="first-name-label" class="first-name">First Name</label>
+        <input type="input" style="border:2px solid #ff92f6" id="name" required="" placeholder="Enter your first name">
+      </div>
+      <div class="row">
+            <label for="last-name" id="last-name-label" class="last-name">Last Name</label>
+            <input type="input" style="border:2px solid #ff92f6" id="name" required="" placeholder="Enter your last name">
+          </div>
+          <div class="row">
+            <label for="age" id="number-label" class="age">Age</label>
+            <input type="number" style="border:2px solid #ff92f6" min="1" max="100" id="number" required="" placeholder="Age">
+          </div>
+      <div class="row">
+        <label for="email" id="email-label" class="email">Email</label>
+        <input type="email" style="border:2px solid #ff92f6" id="email" required="" placeholder="Enter your email address">
+      </div>
+
+      <div class="row">
+        <div>
+          <label class="radio-label">Dog Person</label>
+          <input type="radio" name="radio" value="dog">
+          <label class="radio-label">Cat Person</label>
+          <input type="radio" name="radio" value="cat">
+          <label class="radio-label">No Animals</label>
+          <input type="radio" name="radio" value="noanimals">          
+        </div>
+      </div>
+      <div class="row">
+        <label for="about" id="about-label" class="about">About You</label>        
+        <textarea  style="height: 100px; width: 700px;  border:2px solid #ff92f6" placeholder="Tell me something unique about yourself!"> </textarea>
+        </form>
+      </div>
+      <div class="row">
+        <label for="dropdown" id="dropdown-label">Favorite Season</label>
+        <select id="dropdown">
+          <option value="" disabled selected>Select an option</option>
+          <option>Spring</option>
+          <option>Summer</option>
+          <option>Fall</option>
+          <option>Winter</option>
+        <select>
+        </div>
+      <div class="row">
+        <button type="submit" id="submit" class="btn" value="Submit"> Submit
+      </div>
+    
+</section>
+  
+
+</body>
+
 </html>
