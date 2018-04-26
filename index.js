@@ -6,6 +6,7 @@ function getData() {
   $.ajax({
     url: "https://jsonplaceholder.typicode.com/users",
     success: function(display){
+      
       for (let user of display){
         let usersCard = document.createElement("div");
         usersCard.className="usersCard";
@@ -26,16 +27,17 @@ function getData() {
         albumsButton.innerHTML = "Display Albums";        
         albumsButton.className="button";
 
-        albumsButton.setAttribute("isDisplayed", "true");
+        albumsButton.setAttribute("isDisplayed", "false");
         $(albumsButton).click(function() {
           $(`#todosSection${user.id}`).hide();
           
           if($(albumsButton).attr("isDisplayed") == "true"){
-            getAlbums(user.id);
-            albumsButton.setAttribute("isDisplayed", "false");            
+            $(`#albumsSection${user.id}`).toggle();
+                   
           }
           else {
-            $(`#albumsSection${user.id}`).toggle();
+            getAlbums(user.id);
+            albumsButton.setAttribute("isDisplayed", "true");   
           }
         })
         usersCardButtons.append(albumsButton);
@@ -43,17 +45,17 @@ function getData() {
         let todoButton = document.createElement("div");
         todoButton.innerHTML = "Display ToDos";        
         todoButton.className = "button";
-        todoButton.setAttribute("isDisplayed", "true");
+        todoButton.setAttribute("isDisplayed", "false");
 
         $(todoButton).click(function() {
           $(`#albumsSection${user.id}`).hide();
           
           if($(todoButton).attr("isDisplayed") == "true"){
-            getTodos(user.id);
-            todoButton.setAttribute("isDisplayed", "false");            
+            $(`#todosSection${user.id}`).toggle();            
           }
           else {
-            $(`#todosSection${user.id}`).toggle();
+            getTodos(user.id);
+            todoButton.setAttribute("isDisplayed", "true"); 
           }
         });
         usersCardButtons.append(todoButton);
