@@ -8,21 +8,21 @@ function getData() {
     success: function(display){
       
       for (let user of display){
-        let usersCard = document.createElement("div");
+        let usersSquare = document.createElement("div");
         
-        usersCard.className="usersCard";
-        usersCard.setAttribute("id", `user${user.id}`);
+        usersSquare.className="usersSquare";
+        usersSquare.setAttribute("id", `user${user.id}`);
         let userName = document.createElement("div");
         userName.innerHTML = user.name;
-        usersCard.append(userName);
+        usersSquare.append(userName);
         let usersCompany = document.createElement("div");
         usersCompany.innerHTML = user.company.name;
-        usersCard.append(usersCompany);
+        usersSquare.append(usersCompany);
         let usersEmail = document.createElement("div");
         usersEmail.innerHTML = user.email;
-        usersCard.append(usersEmail);
+        usersSquare.append(usersEmail);
 
-        let usersCardButtons = document.createElement("div");
+        let usersSquareButtons = document.createElement("div");
 
         let albumsButton = document.createElement("div");
         albumsButton.innerHTML = "Display Albums";        
@@ -40,7 +40,7 @@ function getData() {
             albumsButton.setAttribute("isDisplayed", "true");   
           }
         })
-        usersCardButtons.append(albumsButton);
+        usersSquareButtons.append(albumsButton);
         
         let todoButton = document.createElement("div");
         todoButton.innerHTML = "Display ToDos";        
@@ -58,9 +58,9 @@ function getData() {
             todoButton.setAttribute("isDisplayed", "true"); 
           }
         });
-        usersCardButtons.append(todoButton);
-        usersCard.append(usersCardButtons);
-        $("#userSection").append(usersCard);
+        usersSquareButtons.append(todoButton);
+        usersSquare.append(usersSquareButtons);
+        $("#userSection").append(usersSquare);
       }
     }
   });
