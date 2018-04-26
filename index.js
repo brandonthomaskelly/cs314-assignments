@@ -9,6 +9,7 @@ function getData() {
       
       for (let user of display){
         let usersCard = document.createElement("div");
+        
         usersCard.className="usersCard";
         usersCard.setAttribute("id", `user${user.id}`);
         let userName = document.createElement("div");
@@ -32,8 +33,7 @@ function getData() {
           $(`#todosSection${user.id}`).hide();
           
           if($(albumsButton).attr("isDisplayed") == "true"){
-            $(`#albumsSection${user.id}`).toggle();
-                   
+            $(`#albumsSection${user.id}`).toggle();  
           }
           else {
             getAlbums(user.id);
@@ -92,10 +92,10 @@ function getTodos(userID) {
       for (let todo of display){
         let todoEntry = document.createElement("div");
         if (todo.completed == false){
-          todoEntry.innerHTML=`<i class="far fa-square" style="margin-right:10px; margin-top:10px;"></i>${todo.title}`;
+          todoEntry.innerHTML=`<a class="far fa-square" style="margin-right:10px; margin-top:10px;"></a>${todo.title}`;
         }
         else {
-          todoEntry.innerHTML=`<i class="far fa-check-square" style="margin-right:10px; margin-top:10px;"></i>${todo.title}`;
+          todoEntry.innerHTML=`<a class="far fa-check-square" style="margin-right:10px; margin-top:10px;"></a>${todo.title}`;
         }
         todosSection.append(todoEntry);
       }
