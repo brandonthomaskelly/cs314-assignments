@@ -11,32 +11,42 @@
 
 html {
   font-family: 'ralewayregular', Verdana, sans-serif;
-  box-sizing: border-box;
+  background-color: rgb(189, 181, 181);
 }
 
-section {
-  position: relative;
-  padding: 50px 0;
+.header {
+  width:100%;  
+  padding:80px 0px;
+  color:white;
+  background-color: rgb(248, 47, 124);
+  text-align: center;
 }
 
-.inner-content {
-  position: relative;
+.usersCard {
+  width:center;
+  margin:10px;
+  padding:30px;  
+  border: 2px solid black;  
+  border-radius: 20px;
+  background-color: rgb(255, 255, 255);
 }
 
-.dark-bg {
-  background-color: lightgray;
+.button {
+  border: 2px solid black;  
+  min-width: 100px;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  background-color: rgb(155, 84, 226);
+  color:white;  
 }
 
-p {
-  padding-bottom: 10px;
+.button:hover {
+  cursor: pointer;
+  opacity: .75;
 }
 
-button {
-  padding: 5px 20px;
-  margin: 0 10px;
+.button:active {
+  cursor: pointer;
+  background-color: red;
 }
-
-li {
-  padding: 3px 0;
-}
-

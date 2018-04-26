@@ -1,104 +1,103 @@
-/* Brandon Kelly
-CS-314
-Assignment 8
-*/
-
-{/* <p>Select the number that you want to scroll to:</p>
-<button id="buttonOne">1</button>
-<button id="buttonTwo">2</button>
-<button id="buttonThree">3</button>
-<button id="buttonFour">4</button>
-<button id="buttonFive">5</button>
- */}
-document.getElementById("buttonOne").addEventListener("click", function() {
-  document.getElementById("one").scrollIntoView();
-});
-document.getElementById("buttonTwo").addEventListener("click", function() {
-  document.getElementById("two").scrollIntoView();
-});
-document.getElementById("buttonThree").addEventListener("click", function() {
-  document.getElementById("three").scrollIntoView();
-});
-document.getElementById("buttonFour").addEventListener("click", function() {
-  document.getElementById("four").scrollIntoView();
-});
-document.getElementById("buttonFive").addEventListener("click", function() {
-  document.getElementById("five").scrollIntoView();
+$( document ).ready(function() {
+  getData();
 });
 
-{/* <p>1. Pick a background color:</p>
-<button id="blueButton">Blue</button>
-<button id="greenButton">Green</button> */}
-document.getElementById("blueButton").addEventListener("click", function(){
-  document.getElementById("one").style.backgroundColor = "blue";
-});
-document.getElementById("greenButton").addEventListener("click", function(){
-  document.getElementById("one").style.backgroundColor = "green";
-});
+function getData() {
+  $.ajax({
+    url: "https://jsonplaceholder.typicode.com/users",
+    success: function(display){
+      for (let user of display){
+        let usersCard = document.createElement("div");
+        usersCard.className="usersCard";
+        usersCard.setAttribute("id", `user${user.id}`);
+        let userName = document.createElement("div");
+        userName.innerHTML = user.name;
+        usersCard.append(userName);
+        let usersCompany = document.createElement("div");
+        usersCompany.innerHTML = user.company.name;
+        usersCard.append(usersCompany);
+        let usersEmail = document.createElement("div");
+        usersEmail.innerHTML = user.email;
+        usersCard.append(usersEmail);
 
-{/* 2. Click the button to change between a pink and orange background:</p>
-<p>The text on the button will represent the color the user will get.</p>
-<button id="pinkButton">Click for pink!</button>
-*/}
-let sectionTwo = document.getElementById("two");
-let sectionTwoButton = document.getElementById("pinkButton");
-sectionTwoButton.addEventListener("click", function(){
-  if (sectionTwoButton.innerHTML === "Click for pink!") {
-    sectionTwo.style.backgroundColor = "pink";
-    sectionTwoButton.innerHTML = "Click for orange!";
-  }
-  else {
-    sectionTwo.style.backgroundColor = "orange";
-    sectionTwoButton.innerHTML = "Click for pink!";
-  }
-});
+        let usersCardButtons = document.createElement("div");
 
-{/* <p>3. Input text to add to the list below</p>
-<input type="text" id="inputText">
-<button id"submitButton">Submit</button>
-<ul id="threeList">
-  <li>One</li>
-  <li>Green</li> 
-*/}
-let threeList = document.getElementById("threeList");
-let inputText = document.getElementById("inputText");
-let submitButton = document.getElementById("submitButton");
-submitButton.addEventListener("click", function(){
-  let userInput = document.getElementById("inputText").value;
-  var newListItem = document.createElement('li');
-  newListItem.appendChild(document.createTextNode(userInput));
-  threeList.appendChild(newListItem);
-});
+        let albumsButton = document.createElement("div");
+        albumsButton.innerHTML = "Display Albums";        
+        albumsButton.className="button";
 
-{/* <p>4. If an item is clicked, remove it from the list.</p>
-<ul id="fourList">
-  <li>Bob</li>
-  <li>Tim</li>
-  <li>Jack</li>
-  <li>Sam</li>
- */}
-let fourList = document.getElementById("fourList");
-let fourListContent = fourList.getElementsByTagName("li");
-for (var n=0; n<fourListContent.length; n++) {
-  let liItem = fourListContent[n]
-  liItem.addEventListener('click', function() {
-    fourList.removeChild(liItem);
+        albumsButton.setAttribute("isDisplayed", "true");
+        $(albumsButton).click(function() {
+          $(`#todosSection${user.id}`).hide();
+          
+          if($(albumsButton).attr("isDisplayed") == "true"){
+            getAlbums(user.id);
+            albumsButton.setAttribute("isDisplayed", "false");            
+          }
+          else {
+            $(`#albumsSection${user.id}`).toggle();
+          }
+        })
+        usersCardButtons.append(albumsButton);
+        
+        let todoButton = document.createElement("div");
+        todoButton.innerHTML = "Display ToDos";        
+        todoButton.className = "button";
+        todoButton.setAttribute("isDisplayed", "true");
+
+        $(todoButton).click(function() {
+          $(`#albumsSection${user.id}`).hide();
+          
+          if($(todoButton).attr("isDisplayed") == "true"){
+            getTodos(user.id);
+            todoButton.setAttribute("isDisplayed", "false");            
+          }
+          else {
+            $(`#todosSection${user.id}`).toggle();
+          }
+        });
+        usersCardButtons.append(todoButton);
+        usersCard.append(usersCardButtons);
+        $("#userSection").append(usersCard);
+      }
+    }
   });
 }
 
-
-{/* <p>5. If an item is clicked, select it (highlight it) and de-select everything else.</p>
-<p>This doesn't have to be pretty.</p>
-<p>Just change the background color of the selected item with a class.</p>
- */}
-let fiveList = document.getElementById("fiveList");
-let fiveListContent = fiveList.getElementsByTagName("li");
-for (var n=0; n<fiveListContent.length; n++) {
-  let liItem = fiveListContent[n]
-  liItem.addEventListener('click', function() {
-    for (var n=0; n<fiveListContent.length; n++) {
-      fiveListContent[n].style.backgroundColor = "transparent";
+function getAlbums(userID) {
+  $.ajax({
+    url: `https://jsonplaceholder.typicode.com/albums?userId=${userID}`,
+    success: function(display){
+      let albumsSection = document.createElement("div");
+      albumsSection.setAttribute("id",`albumsSection${userID}`)
+      for (let album of display){
+        let albumItem = document.createElement("div");
+        albumItem.innerHTML=`${album.title}`;
+        albumsSection.append(albumItem);
+      }
+      $(`#user${userID}`).append(albumsSection);
     }
-    liItem.style.backgroundColor = "purple";
+  });
+}
+
+function getTodos(userID) {
+  $.ajax({
+    url: `https://jsonplaceholder.typicode.com/todos?userId=${userID}`,
+    success: function(display){
+      let todosSection = document.createElement("div");
+      todosSection.setAttribute("id",`todosSection${userID}`)      
+      let todosHeader = document.createElement("div");
+      for (let todo of display){
+        let todoEntry = document.createElement("div");
+        if (todo.completed == false){
+          todoEntry.innerHTML=`<i class="far fa-square" style="margin-right:10px; margin-top:10px;"></i>${todo.title}`;
+        }
+        else {
+          todoEntry.innerHTML=`<i class="far fa-check-square" style="margin-right:10px; margin-top:10px;"></i>${todo.title}`;
+        }
+        todosSection.append(todoEntry);
+      }
+      $(`#user${userID}`).append(todosSection);
+    }
   });
 }
