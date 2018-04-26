@@ -8,18 +8,17 @@ function getData() {
     success: function(display){
       
       for (let user of display){
-        let usersSquare = document.createElement("div");
-        
-        usersSquare.className="usersSquare";
-        usersSquare.setAttribute("id", `user${user.id}`);
         let userName = document.createElement("div");
         userName.innerHTML = user.name;
-        usersSquare.append(userName);
         let usersCompany = document.createElement("div");
         usersCompany.innerHTML = user.company.name;
-        usersSquare.append(usersCompany);
         let usersEmail = document.createElement("div");
         usersEmail.innerHTML = user.email;
+        let usersSquare = document.createElement("div");
+        usersSquare.className="usersSquare";
+        usersSquare.setAttribute("id", `user${user.id}`);
+        usersSquare.append(userName);        
+        usersSquare.append(usersCompany);
         usersSquare.append(usersEmail);
 
         let usersSquareButtons = document.createElement("div");
@@ -88,7 +87,6 @@ function getTodos(userID) {
     success: function(display){
       let todosSection = document.createElement("div");
       todosSection.setAttribute("id",`todosSection${userID}`)      
-      let todosHeader = document.createElement("div");
       for (let todo of display){
         let todoEntry = document.createElement("div");
         if (todo.completed == false){
