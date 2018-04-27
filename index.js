@@ -1,3 +1,6 @@
+// Brandon Kelly
+// CS314: Web Development
+// Assignment 9
 $( document ).ready(function() {
   getData();
 });
@@ -9,17 +12,16 @@ function getData() {
       
       for (let user of display){
         let userName = document.createElement("div");
-        userName.innerHTML = user.name;
         let usersCompany = document.createElement("div");
-        usersCompany.innerHTML = user.company.name;
         let usersEmail = document.createElement("div");
-        usersEmail.innerHTML = user.email;
         let usersSquare = document.createElement("div");
+        userName.innerHTML = user.name;
+        usersCompany.innerHTML = user.company.name;
+        usersEmail.innerHTML = user.email;        
         usersSquare.className="usersSquare";
         usersSquare.setAttribute("id", `user${user.id}`);
-        usersSquare.append(userName);        
-        usersSquare.append(usersCompany);
-        usersSquare.append(usersEmail);
+        usersSquare.append(userName, usersCompany, usersEmail);        
+        
 
         let usersSquareButtons = document.createElement("div");
 
@@ -90,10 +92,10 @@ function getTodos(userID) {
       for (let todo of display){
         let todoEntry = document.createElement("div");
         if (todo.completed == false){
-          todoEntry.innerHTML=`<a class="far fa-square" style="margin-right:10px; margin-top:10px;"></a>${todo.title}`;
+          todoEntry.innerHTML=`<a class="far fa-square" style="margin-right:10px; margin-top:10px; color:red"></a>${todo.title}`;
         }
         else {
-          todoEntry.innerHTML=`<a class="far fa-check-square" style="margin-right:10px; margin-top:10px;"></a>${todo.title}`;
+          todoEntry.innerHTML=`<a class="far fa-check-square" style="margin-right:10px; margin-top:10px; color:green"></a>${todo.title}`;
         }
         todosSection.append(todoEntry);
       }
