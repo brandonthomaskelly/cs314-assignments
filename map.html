@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Allura" rel="stylesheet">  
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+
+
+    <title>Map</title>
+</head>
+<body>
+
+    <header class="header">
+            <div class="center">
+                <a class="logo" href="home.html"><img src="images/meal-icon.png" alt=""></a>
+                <span class="toggle-nav">Menu</span>
+                <nav class="top-menu collapse">
+                    <ul>
+                        <li class="menu-header"><a href="index.html" class="button">Home Page</a></li>
+                        <li class="menu-header"><a href="form.html" class="button">Form Page</a></li>
+                        <li class="menu-header selected"><a href="" class="button">Map Page</a></li>
+                        <li class="menu-header"><a href="api.html" class="button">Api Page</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        
+        <div class="hidden-panel">
+                <h1>Discover different foods from around the world!</h1>
+        </div>
+
+        <div id="map" class="card"></div>
+
+        <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAIyeU9ygReWNvTK7a2zGyWx2hRxWN4Mg&callback=initMap">
+        </script>
+    
+    <p class="why">Why France</p>
+    
+    <div class="hidden-panel-why" style="display: none">
+            <h1>French cuisine has influenced the style of cooking throughout Europe, and its chefs work in restaurants throughout the world.</h1>
+    </div>
+    <p class="why">Why Canada</p>
+    
+    <div class="hidden-panel-why" style="display: none">
+            <h1>Canadian food has been shaped and impacted by continual waves of immigration, with the types of foods and from different regions and periods of Canada reflecting this immigration.</h1>
+    </div>
+    <p class="why">Why Mexico</p>
+    
+    <div class="hidden-panel-why" style="display: none">
+            <h1>Mexican cuisine is as complex as other ancient cuisines, such as those of China and Japan, with techniques and skills developed over thousands of years of history.</h1>
+    </div>
+
+
+    <footer class="footer">
+        <h1>Copyright (c) 2018 Brandon Kelly. All Rights Reserved.  </h1>
+        <div class="icons">
+            <a href="" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://github.com/brandonthomaskelly"  target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+    </footer>
+    
+        <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="js/map.js"></script>
+
+</body>
+</html>

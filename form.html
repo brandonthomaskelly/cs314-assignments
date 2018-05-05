@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Allura" rel="stylesheet">    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+
+
+    <title>Form</title>
+</head>
+<body>
+    
+    <header class="header">
+        <div class="center">
+            <a class="logo" href="index.html"><img src="images/meal-icon.png" alt=""></a>
+            <span class="toggle-nav">Menu</span>
+            <nav class="top-menu collapse">
+                <ul>
+                    <li class="menu-header"><a href="index.html" class="button">Home Page</a></li>
+                    <li class="menu-header selected"><a href="" class="button">Form Page</a></li>
+                    <li class="menu-header"><a href="map.html" class="button">Map Page</a></li>
+                    <li class="menu-header"><a href="api.html" class="button">Api Page</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <div class="hidden-panel">
+            <h1>Search for your favorite kinds of recipes!</h1>
+    </div>
+
+    <div class="container-form card" id="container-form">
+          <div class="bar">
+                <button class="bar-item button-bar tablink" onclick="tab(event,'name')">Name</button>
+                <button class="bar-item button-bar tablink" onclick="tab(event,'category')">Category</button>
+                <button class="bar-item button-bar tablink" onclick="tab(event,'area')">Area</button>
+              </div>
+
+          <div id="name" class="search animate-fade">
+              <form id="form" autocomplete="off">
+                    <legend>Search by name:</legend>
+                    <div class="autocomplete" style="width:100%;">
+                        <input type="text" class="input" name="name" placeholder="Food name or starting letter" required id="name-input"><br>
+                    </div>
+                    <input type="submit" value="Submit" id="submit">
+
+              </form>
+          </div>
+          <div id="category" class="search animate-fade" style="display:none">
+                <form id="form" autocomplete="off">
+                      <legend>Search by category:</legend>
+                      <div class="autocomplete" style="width:100%;">
+                        <input type="text" class="input" name="category" placeholder="Food category" required id="category-input"><br>
+                      </div>
+                      <input type="submit" class="input" value="Submit" id="submit">
+
+                </form>
+            </div>
+            <div id="area" class="search animate-fade" style="display:none">
+                <form id="form" autocomplete="off">
+                        <legend>Search by area:</legend>
+                        <div class="autocomplete" style="width:100%;">
+                            <input type="text"class="input"   name="area" placeholder="Area" required id="area-input"><br>
+                        </div>
+                        <input type="submit" value="Submit" id="submit">
+
+                </form>
+            </div>
+
+    </div>
+    <footer class="footer">
+        <h1>Copyright (c) 2018 Brandon Kelly. All Rights Reserved.  </h1>
+        <div class="icons">
+            <a href="" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://github.com/brandonthomaskelly"  target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/form.js"></script>
+
+</body>
+</html>

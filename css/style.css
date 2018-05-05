@@ -1,0 +1,599 @@
+body{
+  height: 100%;
+  min-height: 100%;
+}
+
+.header{
+    overflow: hidden;
+    background: #ff3d00    ;
+    padding: 0.5em 0 0;
+    height: 4em;
+    transition: all .4s linear;
+    box-shadow: 0px 2px 2px gray;
+}
+
+.footer{
+  height: 100px;
+  width: 100%;
+  margin-top: 18%;
+  background: #ff3d00;
+  margin-bottom: 0px;
+  min-height: 13vh;
+}
+
+.about, .hidden-panel, .why, .hidden-panel-why{
+  line-height: 30px;
+  margin: auto;
+  font-size: 16px;
+  padding: 5px;
+  text-align: center;
+  background: #555;
+  border: solid 1px #666;
+  color: #ffffff;
+  border-radius: 3px;
+  user-select: none;
+}
+
+.footer h1{
+  margin-top: 0px;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.header .center{
+    max-width: 1250px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.logo{
+  max-width: 80px;
+  display: block;
+  float: left;
+}
+
+.logo img{
+    display: block;
+    max-width: 80px;
+}
+
+.top-menu{
+    color: #fff;
+    clear: left;
+    visibility: inherit;
+    transition: visibility .4s linear;
+    margin-top: 5px;
+}
+
+.top-menu ul, .top-menu li{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.top-menu li:hover{
+    border-bottom:3px solid #ff7539;
+}
+
+.top-menu .selected{
+    background: #c30000;
+}
+
+.top-menu a{
+    color: #fff;
+    width: 100%;
+    height: auto;
+    display: block;
+    padding: 0.75em 1em;
+    text-decoration: none;
+    border-top:#666 1px solid;
+    cursor: pointer;
+}
+
+.toggle-nav {
+    float: right;
+    padding: 1em;
+    margin: 0 0 1em 1em;
+    color: rgb(255,255,255);
+    cursor: pointer;
+  }
+
+  .menu-expanded {
+    height: 15em;
+  }
+
+  .fab{
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    margin: 20px;
+  }
+
+  .icons{
+    margin: auto;
+    text-align: center;
+  }
+
+ 
+
+  /* Image Gallery */
+  * {
+    box-sizing: border-box;
+  }
+
+  
+  /* Position the image container (needed to position the left and right arrows) */
+  .container-gallery {
+    margin-top:  10px;
+    position: relative;
+    display: block;
+  }
+  
+  /* Hide the images by default */
+  .meal-slide {
+    display: none;
+    text-align: center;
+  }
+
+  .card{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding: 8px 8px;
+  }
+
+  .card:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+    background-color: rgba(0, 0, 0, 0.8);
+
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Six columns side by side */
+  .column {
+    float: left;
+    width: 16.66%;
+  }
+  
+  /* Add a transparency effect for thumnbails */
+  .demo {
+    opacity: 0.6;
+  }
+  
+  .active,
+  .demo:hover {
+    opacity: 1;
+  }
+
+    /* Form */
+
+    .bar
+    {
+      width:100%;
+      overflow:hidden;
+      margin-bottom: 30px;
+    }
+
+    .bar-item{
+      padding:8px 16px;
+      width:auto;
+      border:none;
+      display:block;
+      outline:0;
+    }
+
+    .button-bar{
+      border:none;
+      display:inline-block;
+      padding:8px 16px;
+      vertical-align:middle;
+      overflow:hidden;
+      text-decoration:none;
+      color:white;
+      background-color:#ff3d00;
+      text-align:center;
+      cursor:pointer;
+      white-space:nowrap}
+
+      .animate-fade{
+        animation:fading 3s linear;
+      }
+      @keyframes fading{
+        0%{
+          opacity: 0;
+        }
+        100%{
+          opacity: 1;
+        }
+      }
+
+  .form{
+    display: inline;
+    margin: auto;
+  }
+
+  .container-form{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+  }
+
+  input[type=text],input[type=email] , select, textarea {
+    width: 100%;
+    padding: 12px;
+    resize: vertical;
+  }
+
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+  }
+
+  input[type=submit] {
+    background-color: #ff3d00;
+    color: white;
+    padding: 12px 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .form-text{
+    margin-top: 10px;
+
+  }
+
+  input[type=submit]:hover {
+    background-color: #c30000;
+  }
+
+
+  .meal, .hidden-meal{
+    line-height: 30px;
+    margin: auto;
+    font-size: 16px;
+    padding: 5px;
+    text-align: center;
+    background: #5cb85c;
+    border: solid 1px #54ad54;
+    color: #ffffff;
+    border-radius: 3px;
+    user-select: none;
+  }
+
+.autocomplete {
+  position: relative;
+  display: inline-block;
+}
+
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff; 
+  border-bottom: 1px solid #d4d4d4; 
+}
+.autocomplete-items div:hover {
+  /* Hovering an item:*/
+  background-color: #e9e9e9; 
+}
+.autocomplete-active {
+  background-color: DodgerBlue !important; 
+  color: #ffffff; 
+}
+  
+  /* Map */
+
+  #map{
+    width: 70%;
+    height: 400px;
+    margin: auto;
+    background-color: grey;
+  }
+
+  .recipe-map{
+    cursor: pointer;
+  }
+
+  .modal {
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4); 
+  }
+
+  .modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+    text-align: center;
+    height: 30px;
+  }
+
+  .modal-header h2{
+    margin-bottom: 10px;
+    display: inline-block;
+  }
+
+  /* Close Button */
+  .close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+  .modal-body {padding: 2px 16px;
+  text-align: center;}
+
+  .modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+    height: 30px;
+    margin-bottom: 0px;
+  }
+
+  /* Modal Content */
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s
+  }
+
+  /* Add Animation */
+  @keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+  }
+
+/* API page */
+.img-thumb{
+  max-width: 200px;
+}
+
+.button-api{
+  background-color: #ff3d00;
+  color: white;
+  padding: 12px 20px;
+  margin: auto;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline;
+  text-align: center;
+}
+
+.button-container{
+  text-align: center;
+  margin: auto;
+}
+
+#table-data {
+  margin: auto;
+  text-align: center;
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.hidden-info{
+  display: inline-block;
+  width: 100%;
+}
+
+ol{
+  background-color: #ff3d00;
+  color: white;
+  padding: 12px 20px;
+  margin: auto;
+  border: none;
+  border-radius: 4px;
+  display: inline;
+  text-align: center;
+  list-style-type:square;
+}
+
+.stylized{
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  margin: auto;
+  border: none;
+  border-radius: 4px;
+  display: inline;
+  list-style-type:square;
+}
+
+   /* Mobile Sizing */
+
+   @media only screen and (min-width:450px){
+    .header span{
+        display: block;
+    }
+
+    .top-menu{
+        clear: left;
+        position: relative;
+        visibility: inherit;
+        transition:visibility .4s linear;
+    }
+
+}
+
+@media only screen and (min-width:700px){
+  .header{
+      height: 4em;
+  }
+  .logo{
+      max-width: 92px;
+  }
+  .numbertext{
+    color: black;
+  }
+  .meal-slide img{
+    height:100%;
+  }
+  .top-menu{
+      width: auto;
+      float: right;
+      display: block;
+      clear: none;
+      visibility: visible;
+  }
+  .header span{
+      display: none;
+  }
+  .top-menu ul, .top-menu li{
+      float: left;
+  }
+  .top-menu a{
+      border-top: none;
+  }
+  .container-form{
+    margin-top: 10%;
+  }
+  #map{
+    margin-top: 5%;
+    margin-bottom: 30px;
+    height: 700px;
+  }
+
+  .container-api{
+    width: 70%;
+    margin: auto;
+  }
+
+  ol,.stylized{
+    display: inline-block;
+    max-width:70%;
+    margin-left:50px
+  }
+
+}
+
+@media only screen and (max-width:699px){
+  .collapse {
+    visibility: hidden;
+  }
+  .meal-slide img{
+    height:auto;
+    width: 100%;
+  }
+  .numbertext{
+    color: white;
+    text-shadow:1px 1px black
+  }
+  .footer h1{
+    color: white;
+    font-size: 15px;
+    text-align: center;
+  }
+  .container-form{
+    width: 90%;
+  }
+  #map{
+    width: 100%;
+    margin-top: 5%;
+  }
+  .container-api{
+    width: 90%;
+    margin: auto;
+  }
+  ol,.stylized{
+    display: block;
+  }
+  
+}
+
+@media only screen and (min-width:700px){
+  .collapse {
+    visibility: inherit;
+  }
+}
+
+@media only screen and (max-width:1300px){
+  ol,.stylized{
+    display: block;
+    margin: auto;
+  }
+}
